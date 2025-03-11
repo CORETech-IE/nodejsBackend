@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.tauri.app/config/2.0.0-rc",
+  "productName": "NodeBackendApp",
+  "version": "0.1.0",
+  "identifier": "com.nodebackend.app",
+  "build": {
+    "frontendDist": "../dist/browser",
+    "devUrl": "http://localhost:4200",
+    "beforeDevCommand": "npm run start --prefix ../frontend",
+    "beforeBuildCommand": "npm run build --prefix ../frontend"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "CORE Backend",
+        "width": 640,
+        "height": 480,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "nsis",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
