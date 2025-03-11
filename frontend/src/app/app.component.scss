@@ -1,0 +1,15 @@
+#console {
+  font-family: monospace;
+  background: black;
+  color: limegreen;
+  border: 1px solid #555;
+  padding: 10px;
+  width: 97%;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.button-container {
+  text-align: center; /* Centrar el botón */
+  margin-top: 10px;
+}

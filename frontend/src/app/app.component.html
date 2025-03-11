@@ -3,9 +3,12 @@
 
   <textarea
     id="console"
-    cols="80"
+    cols="78"
     rows="20"
     readonly
     [(ngModel)]="logs"
   ></textarea>
+  <div class="button-container">
+    <button (click)="clearLogs()">Clear Logs</button>
+  </div>
 </div>

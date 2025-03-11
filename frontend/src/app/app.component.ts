@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms'; // <-- Importar FormsModule
   selector: 'app-root',
   imports: [FormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   private ws!: WebSocket;
@@ -25,7 +25,22 @@ export class AppComponent implements OnInit {
 
       // 🔹 Forzar a Angular a detectar cambios en la UI
       this.cdr.detectChanges();
+      this.scrollToBottom();    // Auto-scroll
     });
+  }
+
+  clearLogs() {
+    this.logs = '';
+    this.cdr.detectChanges(); // Forzar actualización de la UI
+  }
+
+  scrollToBottom() {
+    setTimeout(() => {
+      const consoleElement = document.getElementById("console");
+      if (consoleElement) {
+        consoleElement.scrollTop = consoleElement.scrollHeight;
+      }
+    }, 50);
   }
 
   connectWebSocket() {
